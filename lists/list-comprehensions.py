@@ -1,15 +1,16 @@
-# list comprehension iterates into a list with less code than a for loop
+
+# * list comprehension iterates into a list with less code than a for loop
 nums = [1, 2, 3]
 print([x * 10 for x in nums])
 
 name = 'colt'
 print([char.upper() for char in name])
 
-# can add conditional logic
+# * can add conditional logic
 numbers = [1, 2, 3, 4, 5, 6]
 evens = [num for num in numbers if num % 2 == 0]
 print(evens)
-# if else statement in list comprehension
+# * if else statement in list comprehension
 # for every num in numbers times by 2 if even divide by 2 if odd
 print([num * 2 if num % 2 == 0 else num / 2 for num in numbers])
 
@@ -45,10 +46,9 @@ print(answer)
 # givin the string 'amazing' create a variable called answer containing all the letters from 'amazing' but not the vowels
 answer = [letter for letter in 'amazing' if letter not in 'aeiou']
 print(answer)
-
 # ! end exercises
 
-# nested lists
+# * nested lists
 nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 print(nested_list[0][1])  # first list second element
 print(nested_list[1][-1])  # second list last element
@@ -68,10 +68,10 @@ print(board)
 print([["X" if num % 2 != 0 else "O" for num in range(1, 4)]
        for val in range(1, 4)])
 
-# ! exercises
-
+# ! exercise
 # using a nested list comprehension and range create a variable called answer containing [[0,1,2],[0,1,2],[0,1,2]]
 answer = [[num for num in range(3)] for val in range(3)]
 print(answer)
 answer = [[num for num in range(10)] for val in range(10)]
 print(answer)
+# ! end exercise
