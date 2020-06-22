@@ -109,5 +109,51 @@ game_properties = ["current_score", "high_score", "number_of_lives", "items_in_i
 # Use the game_properties list and dict.fromkeys() to generate a dictionary with all values set to 0. Save the result to a variable called initial_game_state
 initial_game_state = {}.fromkeys(game_properties, 0)
 print(initial_game_state)
-
 # ! end exercises
+
+# * pop takes a single argument corresponding to a key and removes that key-value pair from the dictionary.  Returns the value corresponding to the key that was removed
+print(initial_game_state.pop('ammo'))
+print(initial_game_state)
+
+# * popitem takes no arg and just removes a random key value pair from the dict
+print(initial_game_state.popitem())
+
+# * update updates keys and values in a dict with another set of key-value pairs
+first = dict(a=1, b=2, c=3, d=4, e=5)
+second = {}
+second.update(first)
+print(second)
+second['a'] = 'AMAZING'
+second.update(first)
+print(second)
+second.update(initial_game_state)
+print(second)
+
+# ! exercises
+inventory = {'croissant': 19, 'bagel': 4, 'muffin': 8, 'cake': 1}
+#DON'T CHANGE THIS LINE!
+# Make a copy of inventory and save it to a variable called stock_list USE A DICTIONARY METHOD
+stock_list = inventory.copy()
+print(stock_list)
+# add the value 18 to stock_list under the key "cookie"
+stock_list['cookie'] = 18
+print(stock_list)
+# remove 'cake' from stock_list USE A DICTIONARY METHOD
+stock_list.pop('cake')
+print(stock_list)
+# ! end exercises 
+
+# * dictionary comprehensions
+# syntax is {___:___ for ___ in ___}
+# it iterates over keys by default and can iterate over key-values using .items()
+numbers = dict(first=1, second=2, third=3)
+squared_numbers = {key: value ** 2 for key,value in numbers.items()}
+print(squared_numbers)
+print({num: num ** 2 for num in [1,2,3,4,5]})
+str1 = 'ABC'
+str2 = '123'
+combo = {str1[i]: str2[i] for i in range(0, len(str1))}
+print(combo)
+# * conditional logic with dictionary comprehensions can be used for key or value
+num_list = [1,2,3,4]
+print({num: ('even' if num % 2 == 0 else 'odd') for num in range(1,100)})
